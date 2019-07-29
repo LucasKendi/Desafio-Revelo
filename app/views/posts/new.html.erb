@@ -1,15 +1,21 @@
 <%= form_with scope: :post, url: posts_path, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :message %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="card border-dark m-3 p-4">
+    <div class="form-group">
+      <h4>
+        <%= form.label :title %><br>
+        <%= form.text_field(:title, {:class => 'form-control', :placeholder => 'Post title'}) %>
+      </h4>
+    </div>
+    <div class="form-group">
+      <h4>
+        <%= form.label :message %><br>
+        <%= form.text_area(:text, {:class => 'form-control', :placeholder => 'Post content'})%>
+      </h4>
+    </div>
+    <div class="form-group">
+      <h4>
+        <%= form.submit(:class => 'btn btn-primary')%>
+      </h4>
+    </div>
+  </div>
 <% end %>
