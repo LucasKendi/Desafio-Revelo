@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
   
-  resource :posts
+  resources :posts
 
   root 'home#index'
 end
