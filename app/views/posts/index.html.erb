@@ -1,9 +1,15 @@
 <% @posts.each do |post| %>
    <div class="card border-dark m-3 p-4">
         <h3><%= post.title %></h3>
-        <p>Posted at: <%= I18n.l(post.created_at, format: :short) %></p>
+        <div class="row">
+            <div class="col col-md-8">
+                <p>Posted at: <%= I18n.l(post.created_at, format: :short) %></p>
+            </div>
+            <div class="col col-md-4 text-right">
+                <%= link_to 'Edit post', edit_post_path(post) %>
+            </div>
+        </div>
         <p class="text-truncate"><%= post.text %></p>
         <%= link_to 'Read more', post_path(post) %>
-        <%= link_to 'Edit post', edit_post_path(post) %>
     </div>
 <% end %>

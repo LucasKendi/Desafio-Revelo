@@ -1,7 +1,5 @@
 <div class="card border-dark m-3 p-4">
-    <h3>
-        <%= @post.title %>
-    </h3>
+    <h3><%= @post.title %></h3>
     <div class="row">
         <div class="col col-md-8">
             <p>Posted at: <%= I18n.l(@post.created_at, format: :long) %></p>
@@ -10,5 +8,5 @@
             <%= link_to 'Edit post', edit_post_path(@post) %>
         </div>
     </div>
-        <p><%= @post.text %></p>
+    <p><%= @post.text %></p>
 </div>
