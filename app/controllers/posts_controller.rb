@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def show
-        @post = Post.find(params[:id])
+        @post = Post.find_by_slug(params[:slug])
     end
 
     def index
@@ -12,11 +12,11 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = Post.find(params[:id])
+        @post = Post.find_by_slug(params[:slug])
     end
 
     def update
-        @post = Post.find(params[:id])
+        @post = Post.find_by_slug(params[:slug])
 
         if (@post.update(post_params))
             redirect_to @post
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find(params[:id])
+        @post = Post.find_by_slug(params[:slug])
         @post.destroy
 
         redirect_to posts_path
