@@ -1,5 +1,10 @@
 <%= form_with scope: :post, url: posts_path, local: true do |form| %>
   <div class="card border-dark m-3 p-4">
+    <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+          <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
     <div class="form-group">
       <h4>
         <%= form.label :title %><br>
