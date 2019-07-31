@@ -7,5 +7,23 @@ RSpec.describe Post, type: :model do
 
             expect(post).to eq(false)
         end
+
+        it "ensures title presence" do
+            post = Post.new(title: "", text: 'texto').save
+
+            expect(post).to eq(false)
+        end
+
+        it "ensures text presence" do
+            post = Post.new(title: 'titulo').save
+
+            expect(post).to eq(false)
+        end
+
+        it "should save successfully" do
+            post = Post.new(title: 'titulo', text: 'texto').save
+
+            expect(post).to eq(true)
+        end
     end
 end
