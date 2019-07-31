@@ -57,7 +57,7 @@ RSpec.describe "Posts", type: :request do
 
       delete '/to-be-deleted'
       get '/to-be-deleted'
-      expect(response).to_not render_template(:show) 
+      expect(response).to have_http_status(:not_found)
 
     end
   end

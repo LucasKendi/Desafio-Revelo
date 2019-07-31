@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
     def show
-        @post = Post.find_by_slug(params[:slug])
+        @post = Post.find_by_slug!(params[:slug]) rescue not_found
     end
 
     def index
