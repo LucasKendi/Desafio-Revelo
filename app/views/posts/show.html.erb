@@ -1,6 +1,6 @@
 <div class="card border-dark m-3 p-4">
     <h3><%= @post.title %></h3>
-    <p>Posted at: <%= I18n.l(@post.created_at, format: :long) %></p>
+    <p><%= post_status(@post) %></p>
     <p><%= @post.text %></p>
     <div class="row justify-content-between">
         <div class="col col-md-8">
