@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     end
 
     def edit
-        @post = Post.find_by_slug(params[:slug])
+        @post = Post.find_by_slug!(params[:slug]) rescue not_found
     end
 
     def update
