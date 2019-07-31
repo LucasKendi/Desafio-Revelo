@@ -24,7 +24,7 @@ RSpec.describe Post, type: :model do
             post = Post.new(title: 'Cartão de cŕedito', text: 'texto')
             post.save
 
-            expect(post).to have_attributes(:slug => "cartao-de-credito")
+            expect(post.to_param).to eq("cartao-de-credito")
         end
 
     end
