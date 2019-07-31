@@ -4,25 +4,36 @@ RSpec.describe "Posts", type: :request do
   describe "GET requests" do
     Post.new(title: 'Cartões de crédito', text: 'Texto sobre cartões').save
 
-    it 'ensures index loads' do
+    it 'loads index' do
       get '/'
       expect(response).to render_template(:index)
     end
 
-    it 'ensures new loads' do
+    it 'loads new' do
       get '/new'
       expect(response).to render_template(:new)
     end
 
-    it 'ensures show loads' do
+    it 'loads show' do
       get '/cartoes-de-credito'
       expect(response).to render_template(:show)
     end
 
-    it 'ensures edit loads' do
+    it 'will not load if post doesnt exists' do
+      get '/not-existing-post'
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'loads edit' do
       get '/cartoes-de-credito/edit'
       expect(response).to render_template(:edit)
     end
+
+    it 'will not edit if post doesnt exists' do
+      get '/not-existing-post/edit'
+      expect(response).to have_http_status(:not_found)
+    end
+
   end
 
   describe "POST requests" do
