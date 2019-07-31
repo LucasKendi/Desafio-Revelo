@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-31T14:29:59-03:00">2019-07-31T14:29:59-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-31T15:10:55-03:00">2019-07-31T15:10:55-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">93.42%</span></span>
+    (<span class="covered_percent"><span class="green">93.51%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.94
+         0.95
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>20</b> files in total.
-    <b>76</b> relevant lines. 
-    <span class="green"><b>71</b> lines covered</span> and
+    <b>77</b> relevant lines. 
+    <span class="green"><b>72</b> lines covered</span> and
     <span class="red"><b>5</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -87,7 +87,7 @@
         <td>8</td>
         <td>7</td>
         <td>1</td>
-        <td>0.9</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -233,9 +233,9 @@
       <tr>
         <td class="strong"><a href="#7e9c0e26c1304a15d7b6ea053d24b801fbf60b34" class="src_link" title="spec/post_spec.rb">spec/post_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>29</td>
-        <td>15</td>
-        <td>15</td>
+        <td>31</td>
+        <td>16</td>
+        <td>16</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -481,8 +481,8 @@
           <code class="ruby">    def set_slug</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">        self.slug = title.parameterize</code>
         </li>
@@ -1819,8 +1819,8 @@
     <h3>spec/post_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1891,13 +1891,13 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &quot;ensures title presence&quot; do</code>
+          <code class="ruby">        it &quot;ensures text presence&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">            post = Post.new(title: &quot;&quot;, text: &#39;texto&#39;).save</code>
+          <code class="ruby">            post = Post.new(title: &#39;titulo&#39;).save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1927,13 +1927,13 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &quot;ensures text presence&quot; do</code>
+          <code class="ruby">        it &quot;should save successfully&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">            post = Post.new(title: &#39;titulo&#39;).save</code>
+          <code class="ruby">            post = Post.new(title: &#39;titulo&#39;, text: &#39;texto&#39;).save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
@@ -1945,7 +1945,7 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">            expect(post).to eq(false)</code>
+          <code class="ruby">            expect(post).to eq(true)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -1963,40 +1963,52 @@
         <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &quot;should save successfully&quot; do</code>
+          <code class="ruby">        it &quot;ensures slug is correct&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">            post = Post.new(title: &#39;titulo&#39;, text: &#39;texto&#39;).save</code>
+          <code class="ruby">            post = Post.new(title: &#39;Cartão de cŕedito&#39;, text: &#39;texto&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">            post.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">            expect(post).to eq(true)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">            expect(post).to have_attributes(:slug =&gt; &quot;cartao-de-credito&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">end</code>
