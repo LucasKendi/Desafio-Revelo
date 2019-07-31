@@ -8,12 +8,6 @@ RSpec.describe Post, type: :model do
             expect(post).to eq(false)
         end
 
-        it "ensures title presence" do
-            post = Post.new(title: "", text: 'texto').save
-
-            expect(post).to eq(false)
-        end
-
         it "ensures text presence" do
             post = Post.new(title: 'titulo').save
 
@@ -25,5 +19,13 @@ RSpec.describe Post, type: :model do
 
             expect(post).to eq(true)
         end
+
+        it "ensures slug is correct" do
+            post = Post.new(title: 'Cartão de cŕedito', text: 'texto')
+            post.save
+
+            expect(post).to have_attributes(:slug => "cartao-de-credito")
+        end
+
     end
 end
