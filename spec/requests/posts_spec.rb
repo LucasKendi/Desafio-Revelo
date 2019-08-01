@@ -20,7 +20,7 @@ RSpec.describe "Posts", type: :request do
     end
 
     it 'will not load if post doesnt exists' do
-      get '/not-existing-post'
+      get '/non-existing-post'
       expect(response).to have_http_status(:not_found)
     end
 
@@ -30,7 +30,7 @@ RSpec.describe "Posts", type: :request do
     end
 
     it 'will not edit if post doesnt exists' do
-      get '/not-existing-post/edit'
+      get '/non-existing-post/edit'
       expect(response).to have_http_status(:not_found)
     end
 
