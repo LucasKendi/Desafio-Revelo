@@ -21,7 +21,7 @@ class PostsController < ApplicationController
         if (@post.update(post_params))
             redirect_to @post
         else
-            render 'edit'
+            render json: @post.errors, status: :unprocessable_entity
         end
     end
 
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
         if (@post.save)
             redirect_to @post
         else
-            render 'new'
+            render json: @post.errors, status: :unprocessable_entity
         end
     end
 
