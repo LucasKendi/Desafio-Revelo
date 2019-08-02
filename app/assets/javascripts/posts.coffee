@@ -3,9 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-    $('.btn.btn-danger').on 'ajax:success', ->
-        $(this).closest('.card').remove()
-
     $('form').on 'ajax:error',(e) ->
         $('.alert.alert-danger').remove();
         post_err = e.detail[0];

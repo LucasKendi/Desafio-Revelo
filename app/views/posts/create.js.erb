@@ -1,0 +1,3 @@
+$('form').on('ajax:success', function() {
+    $('#posts').prepend("<%= j render @post%>")
+})
