@@ -8,10 +8,6 @@ class PostsController < ApplicationController
         @posts = Post.order(updated_at: :desc).all
     end
 
-    def new
-        @post = Post.new
-    end
-
     def edit
         @post = Post.find_by_slug!(params[:slug]) rescue not_found
     end
