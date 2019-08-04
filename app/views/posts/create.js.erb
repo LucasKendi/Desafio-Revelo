@@ -1,3 +1,6 @@
 $('form').on('ajax:success', function() {
+    $('form').each(function() {
+        this.reset();
+    })
     $('#posts').prepend("<%= j render @post%>")
 })
