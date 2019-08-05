@@ -46,7 +46,7 @@ RSpec.describe "Posts", type: :request do
 
     it 'ensures creation fail respond with errors' do
       post '/', :params => {:post => {title: '', text: ''} }, xhr: true
-      expect(response.body).to include('{"title":["can\'t be blank"],"text":["can\'t be blank"]}')
+      expect(response.body).to include('["Title can\'t be blank","Text can\'t be blank"]')
     end
 
     it 'ensures update works' do
@@ -60,7 +60,7 @@ RSpec.describe "Posts", type: :request do
       Post.new(title: 'Titulo antigo', text: 'Texto antigo').save
 
       put '/titulo-antigo', :params => {:post => {title: '', text: ''}}
-      expect(response.body).to include('{"title":["can\'t be blank"],"text":["can\'t be blank"]}')
+      expect(response.body).to include('["Title can\'t be blank","Text can\'t be blank"]')
     end
 
     it 'ensures delete works' do
