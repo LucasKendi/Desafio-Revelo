@@ -1,4 +1,5 @@
 $('form').on('ajax:success', function() {
+    $('.alert.alert-danger').remove();
     $('form').each(function() {
         this.reset();
     })

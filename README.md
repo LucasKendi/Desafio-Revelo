@@ -1,24 +1,34 @@
-# README
+<h1 align="center">Welcome to Micro-blog 👋</h1>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Micro-blog em Rails
 
-Things you may want to cover:
+Decisões tomadas e comentários:
 
-* Ruby version
+> Exibir os posts por ordem do mais recentemente atualizado. Tomei essa decisão pois faria mais sentido poder ver no topo um post que foi alterado recentemente. Caso contrário, um post atualizado poderia se "perder" no meio dos posts antigos do blog. Quando o post é atualizado ele exibe a data de atualização juntamente com a data de publicação original.
+  
+>  O botão de deletar o post está visível para cada post na timeline. Essa configuração permite visualizar com mais facilidade as interações assincronas realizadas na timeline via Ajax.
 
-* System dependencies
+> O formulário de criação do post também está localizado na timeline. Dessa forma também é possível visualizar com mais facilidade  a alteração da timeline quando um post novo é adicionado ao banco.
 
-* Configuration
+> Durante a criação de um post novo, caso a validação da presença do title e message não passem, ele exibe dinamicamente uma mensagem de erro indicando quais alterações devem ser feitas.
 
-* Database creation
+### 🏠 [Homepage](https://lucas-micro-blog.herokuapp.com/)
 
-* Database initialization
+## Run tests
 
-* How to run the test suite
+```sh
+rspec
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Author
 
-* Deployment instructions
+👤 **Lucas Kendi Fattore Hirano**
 
-* ...
+* Github: [@LucasKendi](https://github.com/LucasKendi)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
