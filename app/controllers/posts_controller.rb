@@ -18,7 +18,7 @@ class PostsController < ApplicationController
         if (@post.update(post_params))
             redirect_to @post
         else
-            render json: @post.errors, status: :unprocessable_entity
+            render json: @post.errors.full_messages, status: :unprocessable_entity
         end
     end
 
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
             if @post.save
                 format.js
             else
-                format.json { render json: @post.errors, status: :unprocessable_entity }
+                format.json { render json: @post.errors.full_messages, status: :unprocessable_entity }
             end
         end
     end

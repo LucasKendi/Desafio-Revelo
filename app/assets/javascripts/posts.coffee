@@ -7,5 +7,5 @@ ready = ->
         $('.alert.alert-danger').remove();
         post_err = e.detail[0];
         $(Object.keys(post_err)).each (index, data) ->
-            $('#errors').append('<div class="alert alert-danger">'+data+' '+post_err[data]+'</div>')
+            $('#errors').append('<div class="alert alert-danger">'+post_err[data]+'</div>')
 $(document).on('turbolinks:load', ready)
